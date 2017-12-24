@@ -4,14 +4,16 @@ import de.fhpotsdam.unfolding.data.PointFeature;
 import processing.core.PConstants;
 import processing.core.PGraphics;
 
-/** Implements a visual marker for earthquakes on an earthquake map
+/**
+ * Implements a visual marker for earthquakes on an earthquake map.
  * 
  * @author UC San Diego Intermediate Software Development MOOC team
+ * @author Solange U. Gasengayire
  *
  */
-// TODO: Implement the comparable interface
-public abstract class EarthquakeMarker extends CommonMarker
-{
+
+// DONE: Implement the comparable interface
+public abstract class EarthquakeMarker extends CommonMarker implements Comparable<EarthquakeMarker> {
 	
 	// Did the earthquake occur on land?  This will be set by the subclasses.
 	protected boolean isOnLand;
@@ -24,17 +26,19 @@ public abstract class EarthquakeMarker extends CommonMarker
 	
 	
 	// constants for distance
-	protected static final float kmPerMile = 1.6f;
+	private static final float kmPerMile = 1.6f;
 	
-	/** Greater than or equal to this threshold is a moderate earthquake */
+	// Greater than or equal to this threshold is a moderate earthquake
 	public static final float THRESHOLD_MODERATE = 5;
-	/** Greater than or equal to this threshold is a light earthquake */
+
+	// Greater than or equal to this threshold is a light earthquake
 	public static final float THRESHOLD_LIGHT = 4;
 
-	/** Greater than or equal to this threshold is an intermediate depth */
-	public static final float THRESHOLD_INTERMEDIATE = 70;
-	/** Greater than or equal to this threshold is a deep depth */
-	public static final float THRESHOLD_DEEP = 300;
+	// Greater than or equal to this threshold is an intermediate depth
+	private static final float THRESHOLD_INTERMEDIATE = 70;
+
+	// Greater than or equal to this threshold is a deep depth
+	private static final float THRESHOLD_DEEP = 300;
 
 	// ADD constants for colors
 
@@ -54,9 +58,27 @@ public abstract class EarthquakeMarker extends CommonMarker
 		setProperties(properties);
 		this.radius = 1.75f*getMagnitude();
 	}
-	
-	// TODO: Add the method:
-	// public int compareTo(EarthquakeMarker marker)
+
+
+	/**
+	 * Implementation of the compareTo method
+	 * from the Comparable interface.
+	 * @param marker an EarthquakeMarker to compare to
+	 * @return the result of the comparison so that
+	 * 		   it sorts earthquakes in reverse order of magnitudes.
+	 */
+	public int compareTo(EarthquakeMarker marker) {
+		// DONE : Implement this method
+		int result = 0;
+		if (this.getMagnitude() > marker.getMagnitude()) {
+			result = -1;
+		} else if (this.getMagnitude() == marker.getMagnitude()) {
+			result = 0;
+		} else {
+			result = 1;
+		}
+		return result;
+	}
 	
 	
 	// calls abstract method drawEarthquake and then checks age and draws X if needed
