@@ -7,25 +7,34 @@ import de.fhpotsdam.unfolding.marker.SimplePointMarker;
 import processing.core.PConstants;
 import processing.core.PGraphics;
 
-/** Implements a visual marker for cities on an earthquake map
+/**
+ * Implements a visual marker for cities on an earthquake map
  * 
  * @author UC San Diego Intermediate Software Development MOOC team
- * @author Your name here
+ * @author Solange U. Gasengayire
  *
  */
-// TODO: Change SimplePointMarker to CommonMarker as the very first thing you do 
-// in module 5 (i.e. CityMarker extends CommonMarker).  It will cause an error.
-// That's what's expected.
-public class CityMarker extends SimplePointMarker {
-	
-	public static int TRI_SIZE = 5;  // The size of the triangle marker
-	
+
+// DONE: Change SimplePointMarker to CommonMarker as the very first thing you do in module 5.
+// I.E: CityMarker extends CommonMarker. It will cause an error. That's what's expected.
+public class CityMarker extends CommonMarker {
+
+	// The size of the triangle marker
+	public static int TRI_SIZE = 5;
+
+	/**
+	 * Constructor
+	 * @param location this city's location
+	 */
 	public CityMarker(Location location) {
 		super(location);
 	}
-	
-	
-	public CityMarker(Feature city) {
+
+	/**
+	 * Constructor
+	 * @param city this city's point feature
+	 */
+	CityMarker(Feature city) {
 		super(((PointFeature)city).getLocation(), city.getProperties());
 		// Cities have properties: "name" (city name), "country" (country name)
 		// and "population" (population, in millions)
@@ -35,41 +44,60 @@ public class CityMarker extends SimplePointMarker {
 	/**
 	 * Implementation of method to draw marker on the map.
 	 */
-	public void draw(PGraphics pg, float x, float y) {
+	public void drawMarker(PGraphics pg, float x, float y) {
 		// Save previous drawing style
 		pg.pushStyle();
 		
 		// IMPLEMENT: drawing triangle for each city
 		pg.fill(150, 30, 30);
-		pg.triangle(x, y-TRI_SIZE, x-TRI_SIZE, y+TRI_SIZE, x+TRI_SIZE, y+TRI_SIZE);
+		pg.triangle(x, y-TRI_SIZE, x - TRI_SIZE, y + TRI_SIZE, x + TRI_SIZE, y + TRI_SIZE);
 		
 		// Restore previous drawing style
 		pg.popStyle();
 	}
-	
-	/** Show the title of the city if this marker is selected */
-	public void showTitle(PGraphics pg, float x, float y)
-	{
-		
-		// TODO: Implement this method
-	}
-	
-	
-	
-	/* Local getters for some city properties.  
+
+	/**
+	 * Show the title of the city if this marker is selected
+	 * @param pg the graphics to draw on
+	 * @param x the x position coordinate
+	 * @param y the y position coordinate
 	 */
-	public String getCity()
-	{
+	public void showTitle(PGraphics pg, float x, float y) {
+		// DONE: Implement this method
+		pg.pushStyle();
+
+		int offset = 5;
+		String title = this.getCountry()
+				+ " | " + this.getCity()
+				+ " | " + this.getPopulation();
+		pg.fill(0);
+		pg.text(title, x + offset, y + offset);
+
+		pg.popStyle();
+
+	}
+
+	/**
+	 * City name getter
+	 * @return the name of the city
+	 */
+	public String getCity() {
 		return getStringProperty("name");
 	}
-	
-	public String getCountry()
-	{
+
+	/**
+	 * Country name getter
+	 * @return the name of this city's country
+	 */
+	public String getCountry() {
 		return getStringProperty("country");
 	}
-	
-	public float getPopulation()
-	{
+
+	/**
+	 * Population getter
+	 * @return this city's population count
+	 */
+	public float getPopulation() {
 		return Float.parseFloat(getStringProperty("population"));
 	}
 }

@@ -4,7 +4,8 @@ import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.marker.SimplePointMarker;
 import processing.core.PGraphics;
 
-/** Implements a common marker for cities and earthquakes on an earthquake map
+/**
+ * Implements a common marker for cities and earthquakes on an earthquake map.
  * 
  * @author UC San Diego Intermediate Software Development MOOC team
  * @author Your name here
@@ -23,21 +24,36 @@ public abstract class CommonMarker extends SimplePointMarker {
 		super(location, properties);
 	}
 	
-	// Getter method for clicked field
+
+	/**
+	 * Clicked property getter
+	 * @return true if this marker is clicked
+	 * 		   false otherwise
+	 */
 	public boolean getClicked() {
 		return clicked;
 	}
-	
-	// Setter method for clicked field
+
+	/**
+	 * Clicked property setter
+	 * @param state the clicked value
+	 */
 	public void setClicked(boolean state) {
 		clicked = state;
 	}
-	
-	// Common piece of drawing method for markers; 
-	// Note that you should implement this by making calls 
-	// drawMarker and showTitle, which are abstract methods 
-	// implemented in subclasses
+
+	/**
+	 * Draw method implementation
+	 * @param pg the graphics to draw on
+	 * @param x the x position coordinate
+	 * @param y the y position coordinate
+	 */
 	public void draw(PGraphics pg, float x, float y) {
+		// Common piece of drawing method for markers.
+		// Note that you should implement this by making calls to
+		// drawMarker and showTitle, which are abstract methods
+		// implemented in subclasses.
+
 		// For starter code just drawMaker(...)
 		if (!hidden) {
 			drawMarker(pg, x, y);
@@ -46,6 +62,7 @@ public abstract class CommonMarker extends SimplePointMarker {
 			}
 		}
 	}
+
 	public abstract void drawMarker(PGraphics pg, float x, float y);
 	public abstract void showTitle(PGraphics pg, float x, float y);
 }
