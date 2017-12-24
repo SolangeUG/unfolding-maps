@@ -6,12 +6,16 @@ import processing.core.PGraphics;
 /** Implements a visual marker for ocean earthquakes on an earthquake map
  * 
  * @author UC San Diego Intermediate Software Development MOOC team
- * @author Your name here
+ * @author Solange U. Gasengayire
  *
  */
 public class OceanQuakeMarker extends EarthquakeMarker {
-	
-	public OceanQuakeMarker(PointFeature quake) {
+
+	/**
+	 * Constructor
+	 * @param quake point feature to create a marker for
+	 */
+	OceanQuakeMarker(PointFeature quake) {
 		super(quake);
 		
 		// setting field in earthquake marker
@@ -22,19 +26,22 @@ public class OceanQuakeMarker extends EarthquakeMarker {
 	@Override
 	public void drawEarthquake(PGraphics pg, float x, float y) {
 		// Drawing a centered square for Ocean earthquakes
-		// DO NOT set the fill color.  That will be set in the EarthquakeMarker
-		// class to indicate the depth of the earthquake.
+		// DO NOT set the fill color.
+		// That will be set in the EarthquakeMarker class to indicate the depth of the earthquake.
 		// Simply draw a centered square.
 		
 		// HINT: Notice the radius variable in the EarthquakeMarker class
 		// and how it is set in the EarthquakeMarker constructor
 		
-		// TODO: Implement this method
-		
+		// DONE: Implement this method
+		int size = 20;
+		if (getDepth() < THRESHOLD_INTERMEDIATE) {
+			size = 10;
+		} else if (getDepth() < THRESHOLD_DEEP) {
+			size = 15;
+		}
+		pg.rect(x, y, size, size);
+
 	}
-	
-
-
-	
 
 }
