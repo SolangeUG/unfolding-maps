@@ -1,0 +1,14 @@
+# IntelliJ project files
+*.iml
+.idea/
+
+# Eclipse project files
+.project
+.classpath
+
+# Maven
+target/
+
+# Binaries
+*.jar
+*.class
