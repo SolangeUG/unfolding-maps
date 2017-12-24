@@ -1,27 +1,22 @@
 package demos;
 
 //Java utilities libraries
+
+import de.fhpotsdam.unfolding.UnfoldingMap;
+import de.fhpotsdam.unfolding.data.PointFeature;
+import de.fhpotsdam.unfolding.geo.Location;
+import de.fhpotsdam.unfolding.marker.Marker;
+import de.fhpotsdam.unfolding.marker.SimplePointMarker;
+import de.fhpotsdam.unfolding.providers.Google;
+import de.fhpotsdam.unfolding.utils.MapUtils;
+import processing.core.PApplet;
+
 import java.util.ArrayList;
 import java.util.List;
 
 //Processing library
-import processing.core.PApplet;
-
 //Unfolding libraries
-import de.fhpotsdam.unfolding.UnfoldingMap;
-import de.fhpotsdam.unfolding.core.Coordinate;
-import de.fhpotsdam.unfolding.marker.Marker;
-import de.fhpotsdam.unfolding.data.Feature;
-import de.fhpotsdam.unfolding.data.PointFeature;
-import de.fhpotsdam.unfolding.geo.Location;
-import de.fhpotsdam.unfolding.marker.SimplePointMarker;
-import de.fhpotsdam.unfolding.providers.Google;
-import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;
-import de.fhpotsdam.unfolding.providers.OpenStreetMap;
-import de.fhpotsdam.unfolding.utils.MapUtils;
-
 //Parsing library
-import parsing.ParseFeed;
 
 /** EarthquakeCityMapDemo
  * An application with an interactive map displaying earthquake data.
@@ -179,9 +174,8 @@ public class EarthquakeCityMapDemo extends PApplet {
 		
 	// A suggested helper method that takes in an earthquake feature and 
 	// returns a SimplePointMarker for that earthquake
-	// TODO: Implement this method and call it from setUp, if it helps
-	private SimplePointMarker createMarker(PointFeature feature)
-	{
+	// Implement this method and call it from setUp, if it helps
+	private SimplePointMarker createMarker(PointFeature feature) {
 		// finish implementing and use this method, if it helps.
 		return new SimplePointMarker(feature.getLocation());
 	}
@@ -194,10 +188,8 @@ public class EarthquakeCityMapDemo extends PApplet {
 
 
 	// helper method to draw key in GUI
-	// TODO: Implement this method to draw the key
-	private void addKey() 
-	{	
+	// Implement this method to draw the key
+	private void addKey() {
 		// Remember you can use Processing's graphics methods here
-	
 	}
 }
