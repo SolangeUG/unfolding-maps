@@ -11,7 +11,7 @@ import processing.core.PGraphics;
 public class LandQuakeMarker extends EarthquakeMarker {
 	
 	
-	public LandQuakeMarker(PointFeature quake) {
+	LandQuakeMarker(PointFeature quake) {
 		
 		// calling EarthquakeMarker constructor
 		super(quake);

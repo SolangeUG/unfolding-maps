@@ -10,7 +10,7 @@ import processing.core.PGraphics;
  */
 public class OceanQuakeMarker extends EarthquakeMarker {
 	
-	public OceanQuakeMarker(PointFeature quake) {
+	OceanQuakeMarker(PointFeature quake) {
 		super(quake);
 		
 		// setting field in earthquake marker

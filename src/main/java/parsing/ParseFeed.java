@@ -177,6 +177,10 @@ public class ParseFeed {
 			}
 			
 			point.putProperty("altitude", columns[8 + i]);
+
+			if (! columns[11].equals("\\N")) {
+				point.putProperty("region", getRegion(columns[11]));
+			}
 			
 			features.add(point);
 		}
@@ -184,7 +188,36 @@ public class ParseFeed {
 		return features;
 		
 	}
-	
+
+	/**
+	 * This helper method is to extract the region property
+	 * from the list of point features previously parsed.
+	 * @param features The list of point features to parse
+	 * @return A list of world's regions names
+	 */
+	public static List<String> parseRegions(List<PointFeature> features) {
+		List<String> regions = new ArrayList<>();
+		for (PointFeature feature: features) {
+			String region = feature.getStringProperty("region");
+			if (region != null && ! region.isEmpty()) {
+				if (! regions.contains(region)) {
+					regions.add(region);
+				}
+			}
+		}
+		return regions;
+	}
+
+	/**
+	 * Parse the region property from the provided input
+	 * @param feature The input string to parse
+	 * @return The parsed (extracted) region
+	 */
+	private static String getRegion(String feature) {
+		String region = feature.split("/")[0];
+		region = region.substring(1, region.length());
+		return region;
+	}
 	
 
 	/*
