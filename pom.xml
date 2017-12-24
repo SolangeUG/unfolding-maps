@@ -27,6 +27,98 @@
     </properties>
 
     <dependencies>
+
+        <!-- UCSD Unfolding Maps library dependencies -->
+        <dependency>
+            <groupId>unfolding-ucsd</groupId>
+            <artifactId>unfolding</artifactId>
+            <version>0.9.7</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/unfolding.0.9.7-uscd.jar</systemPath>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.15</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/log4j-1.2.15.jar</systemPath>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>json4processing</groupId>
+            <artifactId>json4processing</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/json4processing.jar</systemPath>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>sqlite-jdbc</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.7.2</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/sqlite-jdbc-3.7.2.jar</systemPath>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>libTUIO</groupId>
+            <artifactId>libTUIO</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/libTUIO.jar</systemPath>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>core</groupId>
+            <artifactId>core</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/core.jar</systemPath>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>gluegen-rt</groupId>
+            <artifactId>gluegen-rt</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/gluegen-rt.jar</systemPath>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>gluegen-rt-windows</groupId>
+            <artifactId>gluegen-rt-windows</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/gluegen-rt-natives-windows-amd64.jar</systemPath>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>jogl-all</groupId>
+            <artifactId>jogl-all</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/jogl-all.jar</systemPath>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>jogl-all-windows</groupId>
+            <artifactId>jogl-all-windows</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/jogl-all-natives-windows-amd64.jar</systemPath>
+            <type>jar</type>
+        </dependency>
+
         <!-- To run tests on IDE such as Eclipse, Intellij -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -65,6 +157,5 @@
             </plugin>
         </plugins>
     </build>
-
     
 </project>
