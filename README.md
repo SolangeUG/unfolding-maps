@@ -1,34 +1,52 @@
-### Unfolding Maps
+# Unfolding Maps
 
-This project is part of the [Object-Oriented Programming in Java](https://www.coursera.org/learn/object-oriented-java/home/info) Coursera course, developped by the University of California, San Diego.
+[![License MIT](https://img.shields.io/badge/license-MIT%20License-green.svg)](https://github.com/SolangeUG/fundamentals/blob/master/LICENSE)
+[![Platform Java](https://img.shields.io/badge/platform-Java-blue.svg)](https://docs.oracle.com/en/java/)
 
-The starter code is a skeleton to use Unfolding Maps in Eclipse (or any other IDE). A very basic Unfolding Map demo you'll find in the source folder in the default package. 
-For more examples visit [Unfloding Maps](http://unfoldingmaps.org), or download the template with examples.
-
-The module folders contain the starter code for the programming assignments associated with the MOOC. 
-Get excited and make things!
-
-#### Installation
-
-Import this folder in Eclipse (`File` → `Import` → `Existing Projects into Workspace`, Select this folder, `Finish`)
-
-
-#### Manual Installation
-
-If the import does not work follow the steps below.
-
-- Create new Java project
-- Copy and Paste all files into project
-- Add all `lib/*.jars` to build path
-- Set native library location for `jogl.jar`. Choose appropriate folder for your OS.
-- Add `data/` as `src`
-
-
-#### Trouble Shooting
-
-Switch Java Compiler to 1.6 if you get VM problems. 
-(Processing should work with Java 1.6, and 1.7)
+## Languages - Libraries - Tools
 
 
 
 
+## Requirements
+
+- Switch Java Compiler to 1.6 if you get VM problems. 
+- Processing should work with Java 1.6, and 1.7
+
+
+
+## Resources
+
+- [Object-Oriented Programming in Java](https://www.coursera.org/learn/object-oriented-java/home/info)
+- [Object Oriented Java Programming: Data Structures and Beyond Specialization](https://www.coursera.org/specializations/java-object-oriented)
+- [Unfloding Maps](http://unfoldingmaps.org)
+
+
+
+## License
+
+[The MIT License (MIT)](https://opensource.org/licenses/MIT)
+
+````
+Copyright (c) 2015 UC San Diego Intermediate Software Development MOOC team
+Copyright (c) 2018 Solange Umuhire Gasengayire
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+````
